@@ -2,7 +2,7 @@
 -- 1 Count the total number of states in each country.
 SELECT
   c.name,
-  count(s.name)
+  count(s.*)
 FROM
   states s
   INNER JOIN countries c ON c.id = s.country_id
@@ -11,7 +11,7 @@ GROUP BY
 
 -- 2 How many employees do not have supervisores.
 SELECT
-  count(s.id) as employees_without_bosses
+  count(s.*) as employees_without_bosses
 FROM
   employees s
 WHERE
@@ -21,7 +21,7 @@ WHERE
 SELECT
   c.name,
   o.address,
-  count(e.id) as employees
+  count(e.*) as employees
 FROM
   offices o
   INNER JOIN employees e ON e.office_id = o.id
@@ -30,7 +30,7 @@ GROUP BY
   c.name,
   o.address
 ORDER BY
-  employees DESC
+  count DESC
 LIMIT
   5;
 
