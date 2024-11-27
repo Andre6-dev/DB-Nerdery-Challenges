@@ -357,6 +357,14 @@ $ $;
 -- d Put your answer here if the transaction fails(YES / NO):
 
 -- NO, Will fail if I haven't the enough money to withdraw('OUT)
+SELECT
+  create_out_movement(
+    '3b79e403-c788-495a-a8ca-86ad7643afaf',
+    731823.56
+  );
+
+SELECT
+  create_out_movement('3b79e403-c788-495a-a8ca-86ad7643afaf', 928.56);
 -- e If the transaction fails, make the correction on step c to avoid the failure:
 -- I need to create a transfer to have enough money to make a withdrawal operation
 -- f Once the transaction is correct, make a commit
